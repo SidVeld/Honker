@@ -1,0 +1,422 @@
+﻿<Window x:Class="Honker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Honker"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF151515"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        Title="Honker" Height="500" Width="900">
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Content="HONKER"
+                Foreground="Crimson"
+                FontSize="18"
+                FontWeight="Bold"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+            <Button
+                Content="Load"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="10,16"
+                FontWeight="Bold"
+                Width="100"
+                Height="30"
+                Background="Crimson"
+                Foreground="Black"
+                BorderBrush="Black"
+                Click="OpenCharacterList"
+                Grid.Column="1"/>
+            <Button
+                Content="Save"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="10,16"
+                FontWeight="Bold"
+                Width="100"
+                Height="30"
+                Background="Crimson"
+                Foreground="Black"
+                BorderBrush="Black"
+                Click="SaveCharacter"
+                Grid.Column="2"/>
+            <Button
+                Content="Add New"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="10,16"
+                FontWeight="Bold"
+                Width="100"
+                Height="30"
+                Background="Crimson"
+                Foreground="Black"
+                BorderBrush="Black"
+                Click="CreateNewCharacter"
+                Grid.Column="3"/>
+            <Button
+                Content="Delete"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="10,16"
+                FontWeight="Bold"
+                Width="100"
+                Height="30"
+                Background="Crimson"
+                Foreground="Black"
+                BorderBrush="Black"
+                Click="DeleteCharacter"
+                Grid.Column="4"/>
+        </Grid>
+
+        <Grid
+            HorizontalAlignment="Left"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            Margin="0,0"
+            Width="892">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="426"
+                Margin="10,10">
+
+                <Label
+                    Content="Name"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldName"
+                    Content="John Doe"
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Width="203"
+                        Margin="10,10,0,0">
+
+                        <Label
+                            Content="Specialization"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldSpec"
+                            Content="Miner"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Bloodtype"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldBloodtype"
+                            Content="A+"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Body Build"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldBuild"
+                            Content="Average"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Hairstyle"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button 
+                            Name="FieldHairStyle"
+                            Content="Long"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Eye Color"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldEyeColor"
+                            Content="Brown"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+                    </StackPanel>
+
+                    <StackPanel
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Width="203"
+                        Margin="10,10,10,0"
+                        Grid.Column="1">
+
+                        <Label
+                            Content="Age"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldAge"
+                            Content="86"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Race"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldRace"
+                            Content="Space Dwarf"
+                            FontWeight="Bold"
+                            Height="30"
+                            Background="Crimson"
+                            Foreground="Black"
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Body Height"
+                            Foreground="Crimson" 
+                            FontSize="18" 
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldHeight"
+                            Content="Small" 
+                            FontWeight="Bold"
+                            Height="30" 
+                            Background="Crimson" 
+                            Foreground="Black" 
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+
+                        <Label
+                            Content="Hair Color"
+                            Foreground="Crimson"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                        <Button
+                            Name="FieldHairColor"
+                            Content="Black"
+                            FontWeight="Bold" 
+                            Height="30" 
+                            Background="Crimson" 
+                            Foreground="Black" 
+                            BorderBrush="Black"
+                            Click="OpenTextEdit"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="426"
+                Margin="10,10"
+                Grid.Column="1">
+
+                <Label
+                    Content="Backstory"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldBackstory"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+                <Label
+                    Content="General Records"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldRecordsGen"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+                <Label
+                    Content="Medical Records"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldRecordsMed"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+                <Label
+                    Content="Security Records"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldRecordsSec"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+                <Label
+                    Content="Employee Records"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldRecordsEmp"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+                <Label
+                    Content="Flavor"
+                    Foreground="Crimson"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Margin="10,0"/>
+                <Button
+                    Name="FieldFlavor"
+                    Content="Wow, this is very large text."
+                    Margin="10,0"
+                    FontWeight="Bold"
+                    Height="30"
+                    Background="Crimson"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    Click="OpenTextEdit"
+                    HorizontalContentAlignment="Left"
+                    Tag="big"/>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>

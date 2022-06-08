@@ -1,0 +1,35 @@
+﻿<Window x:Class="Honker.ConfirmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Honker.WPF"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF151515"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        SizeToContent="Height"
+        Title="Wait!" Width="800">
+    <StackPanel Margin="15,10">
+        <TextBlock Margin="10,10"
+            Name="MessageText"
+            TextWrapping="WrapWithOverflow"
+            Text="Label"
+            TextAlignment="Center"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="Crimson"/>
+        <Button
+            Name="ButtonConfirm"
+            Background="Crimson"
+            Foreground="Black"
+            Click="Confirm"
+            Content="Do it!">
+        </Button>
+    </StackPanel>
+</Window>

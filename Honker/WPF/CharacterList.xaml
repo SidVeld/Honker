@@ -1,0 +1,52 @@
+﻿<Window x:Class="Honker.CharacterList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Honker"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF151515"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="CharacterList" Height="450" Width="800">
+
+    <StackPanel>
+        <DataGrid
+            Name="CharactersGrid"
+            Height="340"
+            Margin="10, 5"
+            IsReadOnly="True"
+            d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Grid Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button
+                Name="FieldConfirm"
+                Content="Load!"
+                Grid.Column="1"
+                Margin="5,5"
+                Background="Crimson"
+                Foreground="Black"
+                BorderBrush="Black"
+                Click="FieldConfirm_Click"/>
+            <TextBox
+                x:Name="TextBoxIndex"
+                HorizontalAlignment="Center"
+                TextWrapping="Wrap"
+                Text="Select Number"
+                VerticalAlignment="Center"
+                TextAlignment="Center"
+                Foreground="Crimson"
+                BorderBrush="Crimson"
+                Height="32"
+                Width="370"/>
+        </Grid>
+    </StackPanel>
+</Window>
